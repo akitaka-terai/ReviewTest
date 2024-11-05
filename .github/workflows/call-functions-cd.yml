@@ -1,0 +1,19 @@
+name: Call
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  send-notification-mail:
+    runs-on:
+      ubuntu-latest
+    steps:
+    - run: echo "Before Call"
+
+  call-functions-cd-workflow:
+    needs: send-notification-mail
+    uses: ./.github/workflows/functions-cd.yml

@@ -1,0 +1,14 @@
+name: Called
+
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    runs-on:
+      ubuntu-latest
+    environment: development 
+
+    steps:
+      # Login to Azure
+      - run: echo "After Call"
